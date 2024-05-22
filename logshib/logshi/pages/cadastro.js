@@ -22,7 +22,6 @@ export default function Cadastro() {
         navigation.navigate('entrada');
     };
 
-
     return (
         <KeyboardAvoidingView style={{ flex: 1 }}>
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -35,18 +34,45 @@ export default function Cadastro() {
                     </Animatable.View>
                     <Animatable.View animation="fadeInUp" style={styles.containerForm}>
                         <Text style={styles.title}>Cadastre-se!</Text>
-                        <TextInput placeholder='Nome/Sobrenome' style={styles.input}  />
-                        <TextInput placeholder='Email' style={styles.input} secureTextEntry />
-                        <TextInput placeholder='Telefone ' style={styles.input} />
-                        <TextInput placeholder='Senha' style={styles.input} secureTextEntry />
-                        <TextInput placeholder='Confirmar senha ' style={styles.input} secureTextEntry  />
+                        <TextInput
+                            placeholder='Nome/Sobrenome'
+                            style={styles.input}
+                            placeholderTextColor="#FFF"
+                            underlineColorAndroid="transparent"
+                        />
+                        <TextInput
+                            placeholder='Email'
+                            style={styles.input}
+                            secureTextEntry
+                            placeholderTextColor="#FFF"
+                            underlineColorAndroid="transparent"
+                        />
+                        <TextInput
+                            placeholder='Telefone'
+                            style={styles.input}
+                            placeholderTextColor="#FFF"
+                            underlineColorAndroid="transparent"
+                        />
+                        <TextInput
+                            placeholder='Senha'
+                            style={styles.input}
+                            secureTextEntry
+                            placeholderTextColor="#FFF"
+                            underlineColorAndroid="transparent"
+                        />
+                        <TextInput
+                            placeholder='Confirmar senha'
+                            style={styles.input}
+                            secureTextEntry
+                            placeholderTextColor="#FFF"
+                            underlineColorAndroid="transparent"
+                        />
                         <TouchableOpacity style={styles.button} onPress={handleAcessarPress}>
                             <Text style={styles.buttonText}> Criar Conta </Text>
                         </TouchableOpacity>
                         <TouchableOpacity style={styles.buttonRegister} onPress={handleEntradaPress}>
                             <Text style={styles.registerText}>Já tem uma conta? Entre !</Text>
                         </TouchableOpacity>
-
                     </Animatable.View>
                     {/* Modal para exibir a mensagem de login bem-sucedido */}
                     <Modal
@@ -99,32 +125,30 @@ const styles = StyleSheet.create({
         marginTop: 30,
         color: "#fff",
         marginBottom: 10,
-
-    
     },
     input: {
         borderBottomWidth: 1,
+        borderBottomColor: '#fff',
         height: 40,
         marginBottom: 12,
         fontSize: 16,
-        color: '#fff',
-        
+        color: "#fff",
     },
     button: {
         backgroundColor: '#fff',
         width: '60%',
-        borderRadius: 16,
+        borderRadius: 50,
         paddingVertical: 11,
         marginTop: 40,
         justifyContent: 'center',
         alignItems: 'center',
-        alignSelf:'center',
+        alignSelf: 'center',
     },
     buttonText: {
         color: "#034EA1",
         fontSize: 18,
         fontWeight: 'bold',
-        fontFamily: 'montserrat' ,
+        fontFamily: 'montserrat',
     },
     buttonRegister: {
         marginTop: 14,
@@ -138,7 +162,7 @@ const styles = StyleSheet.create({
         top: 20,
         left: 20,
         zIndex: 9999,
-        padding: 10 ,
+        padding: 10,
     },
     modalContainer: {
         flex: 1,
@@ -149,7 +173,7 @@ const styles = StyleSheet.create({
     modalContent: {
         backgroundColor: '#FFF',
         padding: 25,
-        borderRadius: 15 ,
+        borderRadius: 15,
         alignItems: 'center',
     },
     modalText: {
@@ -157,12 +181,11 @@ const styles = StyleSheet.create({
         color: '#333',
         marginBottom: 10,
         fontFamily: 'montserrat',
-        
     },
     modalButton: {
         backgroundColor: '#034EA1',
-        borderRadius: 8,
-        padding: 20,
+        borderRadius: 20,
+        padding: 12,
         marginTop: 10,
     },
     modalButtonText: {

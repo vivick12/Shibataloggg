@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -22,7 +23,8 @@ export default function Bem_Vindo() {
             </View>
             <Animatable.View delay={600} animation='fadeInUp' style={styles.containerForm}>
                 <Text style={styles.title}>
-                    Venha fazer parte e organizar suas compras !
+                    Venha fazer parte e 
+                    organizar suas compras !
                 </Text>
                 <Text style={styles.text}>
                     Faça o login para começar

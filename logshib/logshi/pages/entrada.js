@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     button: {
         backgroundColor: '#034EA1',
         width: '60%',
-        borderRadius: 8,
+        borderRadius: 50,
         paddingVertical: 8,
         marginTop: 45,
         justifyContent: 'center',
@@ -93,6 +93,7 @@ const styles = StyleSheet.create({
         fontSize: 18,
         fontWeight: 'bold',
         fontFamily: 'montserrat',
+
     },
     buttonRegister: {
         marginTop: 14,
