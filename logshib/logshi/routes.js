@@ -1,30 +1,42 @@
 import { createStackNavigator } from '@react-navigation/stack';
+import SplashScreen from './pages/splash';
 import Bem_Vindo from './pages/index';
 import Acesso from './pages/entrada';
 import Cadastro from './pages/cadastro';
+
+
 
 const Stack = createStackNavigator();
 
 export default function Routes() {
     return (
         <Stack.Navigator>
-            <Stack.Screen
-                name="index"
-                component={Bem_Vindo}
-                options={{headerShown: false }}
             
+            <Stack.Screen
+                name="splash"
+                component={SplashScreen}
+                options={{ headerShown: false }}
+
             />
 
             <Stack.Screen
+                name="index"
+                component={Bem_Vindo}
+                options={{ headerShown: false }}
+
+            />
+
+            
+            <Stack.Screen
                 name="entrada"
                 component={Acesso}
-                options={{headerShown: false }}
+                options={{ headerShown: false }}
             />
 
             <Stack.Screen
                 name="cadastro"
                 component={Cadastro}
-                options={{headerShown: false }}
+                options={{ headerShown: false }}
             />
         </Stack.Navigator>
     )

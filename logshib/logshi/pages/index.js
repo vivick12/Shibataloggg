@@ -6,6 +6,7 @@ import * as Animatable from 'react-native-animatable';
 
 export default function Bem_Vindo() {
     const navigation = useNavigation();
+    
 
     useFonts({ 'Montserrat': require('../assets/fonts/Montserrat-Medium.otf') });
     return (
@@ -21,7 +22,7 @@ export default function Bem_Vindo() {
             </View>
             <Animatable.View delay={600} animation='fadeInUp' style={styles.containerForm}>
                 <Text style={styles.title}>
-                    Monitore e organize seus recursos didáticos de qualquer lugar!
+                    Venha fazer parte e organizar suas compras !
                 </Text>
                 <Text style={styles.text}>
                     Faça o login para começar
@@ -30,14 +31,14 @@ export default function Bem_Vindo() {
                     onPress={() => navigation.navigate('entrada')}
                     style={styles.button}>
                     <Text style={styles.buttonText}>
-                        Acessar
+                    Entrar
                     </Text>
                 </TouchableOpacity>
                 <TouchableOpacity
                     onPress={() => navigation.navigate('cadastro')}
                     style={[styles.button, styles.buttonCadastro]}>
                     <Text style={styles.buttonText}>
-                        Cadastre-se
+                        Criar conta
                     </Text>
                 </TouchableOpacity>
             </Animatable.View>

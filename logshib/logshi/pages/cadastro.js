@@ -18,6 +18,11 @@ export default function Cadastro() {
         setModalVisible(false);
     };
 
+    const handleEntradaPress = () => {
+        navigation.navigate('entrada');
+    };
+
+
     return (
         <KeyboardAvoidingView style={{ flex: 1 }}>
             <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
@@ -30,17 +35,18 @@ export default function Cadastro() {
                     </Animatable.View>
                     <Animatable.View animation="fadeInUp" style={styles.containerForm}>
                         <Text style={styles.title}>Cadastre-se!</Text>
-                        <TextInput placeholder='Nome/Sobrenome' style={styles.input} />
+                        <TextInput placeholder='Nome/Sobrenome' style={styles.input}  />
                         <TextInput placeholder='Email' style={styles.input} secureTextEntry />
                         <TextInput placeholder='Telefone ' style={styles.input} />
-                        <TextInput placeholder='Senha' style={styles.input} />
-                        <TextInput placeholder='Confirmar senha ' style={styles.input} />
+                        <TextInput placeholder='Senha' style={styles.input} secureTextEntry />
+                        <TextInput placeholder='Confirmar senha ' style={styles.input} secureTextEntry  />
                         <TouchableOpacity style={styles.button} onPress={handleAcessarPress}>
-                            <Text style={styles.buttonText}>Acessar</Text>
+                            <Text style={styles.buttonText}> Criar Conta </Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonRegister}>
-                            <Text style={styles.registerText}>Não possui uma conta? Cadastre-se</Text>
+                        <TouchableOpacity style={styles.buttonRegister} onPress={handleEntradaPress}>
+                            <Text style={styles.registerText}>Já tem uma conta? Entre !</Text>
                         </TouchableOpacity>
+
                     </Animatable.View>
                     {/* Modal para exibir a mensagem de login bem-sucedido */}
                     <Modal
@@ -51,7 +57,7 @@ export default function Cadastro() {
                     >
                         <View style={styles.modalContainer}>
                             <View style={styles.modalContent}>
-                                <Text style={styles.modalText}>Login bem-sucedido!</Text>
+                                <Text style={styles.modalText}> Conta criada com sucesso!</Text>
                                 <Pressable style={styles.modalButton} onPress={closeModal}>
                                     <Text style={styles.modalButtonText}>Fechar</Text>
                                 </Pressable>
@@ -77,7 +83,8 @@ const styles = StyleSheet.create({
     message: {
         fontSize: 28,
         fontWeight: 'bold',
-        color: "#034EA1"
+        color: "#034EA1",
+        marginTop: 8,
     },
     containerForm: {
         backgroundColor: "#034EA1",
@@ -89,8 +96,10 @@ const styles = StyleSheet.create({
     },
     title: {
         fontSize: 20,
-        marginTop: 28,
-        color: "#fff"
+        marginTop: 30,
+        color: "#fff",
+        marginBottom: 10,
+
     
     },
     input: {
@@ -103,17 +112,19 @@ const styles = StyleSheet.create({
     },
     button: {
         backgroundColor: '#fff',
-        width: '15',
-        borderRadius: 14,
+        width: '60%',
+        borderRadius: 16,
         paddingVertical: 11,
-        marginTop: 14,
+        marginTop: 40,
         justifyContent: 'center',
         alignItems: 'center',
+        alignSelf:'center',
     },
     buttonText: {
-        color: "##034EA1",
+        color: "#034EA1",
         fontSize: 18,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        fontFamily: 'montserrat' ,
     },
     buttonRegister: {
         marginTop: 14,
@@ -127,7 +138,7 @@ const styles = StyleSheet.create({
         top: 20,
         left: 20,
         zIndex: 9999,
-        padding: 10
+        padding: 10 ,
     },
     modalContainer: {
         flex: 1,
@@ -138,22 +149,26 @@ const styles = StyleSheet.create({
     modalContent: {
         backgroundColor: '#FFF',
         padding: 25,
-        borderRadius: 10,
+        borderRadius: 15 ,
         alignItems: 'center',
     },
     modalText: {
         fontSize: 20,
         color: '#333',
         marginBottom: 10,
+        fontFamily: 'montserrat',
+        
     },
     modalButton: {
         backgroundColor: '#034EA1',
-        borderRadius: 4,
-        padding: 10,
+        borderRadius: 8,
+        padding: 20,
         marginTop: 10,
     },
     modalButtonText: {
         color: '#FFF',
-        fontSize: 10,
+        fontSize: 14,
+        fontFamily: 'montserrat',
+        fontWeight: 'bold',
     },
 });
